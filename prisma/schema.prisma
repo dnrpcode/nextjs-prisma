@@ -6,17 +6,17 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
 }
-
 
 model Post {
   id        Int      @id @default(autoincrement())
   title     String   @db.VarChar(255)
   content   String?
   published Boolean  @default(true)
-  authorId  Int
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
