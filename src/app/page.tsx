@@ -21,8 +21,8 @@ const Page = async () => {
         Create
       </Link>
       <div className="flex flex-col mt-8 gap-4">
-        {posts?.posts?.map((post: any, index: number) => (
-          <Item key={index} post={post} />
+        {posts?.posts?.map((post: any) => (
+          <Item key={post.id} post={post} />
         ))}
       </div>
     </div>
